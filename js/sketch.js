@@ -1,34 +1,28 @@
-var canvas;
-
-var h1;
-
-var x = 100;
-var y = 100;
 
 
 function setup() {
-  // put setup code here
- createP("This is a p");
- h1 = createElement('h1', 'My name is...');
- canvas = createCanvas(600, 600);
-
- canvas.position(200,300);
-
+	
+  	createCanvas(windowWidth, windowHeight);
+  	background(120);
 }
 
-function mousePressed(){
-	//.html changes the content in a object
-	h1.html("Jon Chambers");
-	createP("click" + mouseX);
-
-}
 function draw() {
-  // put drawing code here
-  clear();
-  background(0);
-  fill(255, 0 ,0);
-  ellipse(x, y, 100, 100)
-  x = x + random(-5, 5);
-  //we can animate elements in draw
-  h1.position(x, y);
+	 
+	stroke(0,255,0);
+	strokeWeight(20);
+  	ellipse(400, 500, mouseX, mouseY);
+  	if (mouseIsPressed){
+		fill(0, 0, 255);
+
+  	}else{
+		fill(255, 0, 0);
+
+  	}
+
+  print(mouseIsPressed);
 }
+
+function windowResized(){
+	resizeCanvas(windowWidth, windowHeight);
+	background(120);
+} 

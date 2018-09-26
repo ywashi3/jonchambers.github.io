@@ -1,75 +1,56 @@
 function beginning(){
 	background(0);
-	greeting = createP("Please type you name and press enter");
- 	
- 	createElement('br');
+	greeting = createP("Please type your name and press enter");
+	createElement("br");
 
- 	nameInput = createInput("type your name");
- 	nameInput.changed(startStory);
+	nameInput = createInput("type your name here");
+	nameInput.changed(startStory);
 }
 
 function startStory(){
 	greeting.hide();
 	nameInput.hide();
-	namep = createElement('h1', nameInput.value())
+	userName = createElement('h1', nameInput.value());
+	title = createElement('h1', "Get home before the sun sets");
+	
+	firstOption = createA("#", "walk towards the sun");
+	createElement('br');
+	secondOption = createA("#", "go home");
 
-	Title = createElement('h1' , 'Get home before the sun sets');
- 	FirstOption = createA("#" , "walk towards home");
- 	createElement('br');
- 	SecondOption = createA("#" , "walk towards the sun");
- 	 
-
- 	FirstOption.mousePressed(toHome);
- 	SecondOption.mousePressed(toSun);
-}
- 
-function toHome(){
-
-	FirstOption.hide();
-	SecondOption.hide();
-	Title.hide();
-	namep.html(nameInput.value());
-	firstTitle = createP("You have gone home. Good night")
-	//firstTitle.html('You have gone home. Good night');
-
-  	bgcolor = color(random(255)); 
+	firstOption.mousePressed(toSun);
+	secondOption.mousePressed(toHome);
 }
 
 function toSun(){
-	
 	walkToSun = true;
+	userName.html(nameInput.value());
 
-
-	namep.html(nameInput.value());
-	
-	Title.html('You walk towards the sun, it gets bigger.');
-	FirstOption.html("walk closer");
- 	SecondOption.html("control the sun set");
-
- 	FirstOption.mousePressed(closerSun);
- 	SecondOption.mousePressed(controlSun);
-
-  	bgcolor = color(random(255));
-}
-
-function closerSun(){
-	FirstOption.hide();
-	SecondOption.hide();
-	namep.html(nameInput.value());
-	sunAnimate = true;
-	walkToSun = false;
-	Title.html('Drifting towards the sun');
-	sunX = windowWidth/2;
+	title.html('Your walk towards the sun, it gets bigger');
+	firstOption.html('walk closer');
+	secondOption.html("control the sun");
+	firstOption.mousePressed(walkCloserToSun);
 }
 
 
-function controlSun(){
-	walkToSun = false;
-	controlSunBool = true;
+function toHome(){
+	firstOption.hide();
+	secondOption.hide();
 
-	FirstOption.hide();
-	SecondOption.hide();
-	
+	title.html('you have gone home. good night');
+
+}
+function walkCloserToSun(){
+	walkToSun = false;
+	walkCloser = true;
+ 	 
+	userName.html(nameInput.value());
+
+	title.html('You are very close to the sun');
+	firstOption.html('Go home');
+	secondOption.html("Flay away");
+	modem.play();
 	sunSlider = createSlider(0, 255, 0);
-	
+	sunSlider.position(50, 600);
 }
+
+

@@ -1,34 +1,24 @@
-function toHomeAnim(){
-
-
-}
-
+//animation functions
 function toSunAnim(){
-	background(sunSetImage);
-
-}
-
-function closerSunAnim(){
-	background(outerSpace);
 	
-	fill(random(255), 0, 0);
-
-	 sunX = sunX + random(-5,5);
-	 sunY = 200;
-	ellipse(sunX, sunY, 100, 100);
-	ellipse(windowWidth/2, windowHeight/2, 100, 100)
-} 
-
-function controlSunAnim(){
-		background(outerSpace);
-		fill(sunSlider.value(), 0,0);
-		ellipse(windowWidth/2, windowHeight/2, sunSlider.value(), sunSlider.value())
-		if (sunSlider.value() > 150){
-		Title.html('the sun is too big!!');
-	}else{
-		Title.html('control the sun');
-	}
-
+	sunX = windowWidth/2;
+	sunY = windowHeight/2;
+	sunX = sunX + random(-5, 5);
+	sunY = sunY + random(-3, 3);
+	ellipse(sunX, sunY, 300, 300);
 }
 
 
+function walkCloserAnim(){
+	background(spaceBG);
+	
+	image(spaceBG, 500, 600, 900, 50);
+	fill(sunSlider.value(), 0, 0);
+	ellipse(windowWidth/2, windowHeight/2,sunSlider.value(), sunSlider.value());
+	if(sunSlider.value() > 200){
+		title.html('You are too close!');
+
+	}else{
+		title.html('You are very close to the sun');
+	}
+}
