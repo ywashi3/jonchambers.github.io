@@ -12,7 +12,7 @@ function toSunAnim(){
 function walkCloserAnim(){
 	background(spaceBG);
 	
-	image(spaceBG, 500, 600, 900, 50);
+	image(spaceBG, 500, 600, 1100, 50);
 	fill(sunSlider.value(), 0, 0);
 	ellipse(windowWidth/2, windowHeight/2,sunSlider.value(), sunSlider.value());
 	if(sunSlider.value() > 200){
