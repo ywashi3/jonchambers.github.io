@@ -35,9 +35,9 @@ function setup() {
 }
 
 function draw() {
-    imageMode(CENTER);
+    imageMode(CENTER); 
 
-    //image(capture, w/2, h/2, w, h);
+    image(capture, w/2, h/2, w, h);
     var positions = tracker.getCurrentPosition();
 
     noFill();
