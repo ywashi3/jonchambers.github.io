@@ -50,7 +50,7 @@ function draw() {
 
     noStroke();
     for (var i = 0; i < positions.length; i++) {
-        //fill(map(i, 0, positions.length, 0, 360), 50, 100);
+        fill(map(i, 0, positions.length, 0, 360), 50, 100);
         fill(200, 40, 100);
         stroke(0);
        // ellipse(positions[i][0], positions[i][1], 4, 4);
@@ -60,7 +60,7 @@ ellipse(positions[62][0], positions[62][1], 50, 50);
         console.log(smileDist);
         
 
-    }
+    } 
 
     if (positions.length > 0) {
         var mouthLeft = createVector(positions[44][0], positions[44][1]);
@@ -69,7 +69,7 @@ ellipse(positions[62][0], positions[62][1], 50, 50);
         if(smileDist > 80){
             text("smile", 0, 40);
         }
-       // image(mask, positions[62][0], positions[62][1], 270, 270);
+        image(mask, positions[62][0], positions[62][1], 270, 270);
         // uncomment the line below to show an estimate of amount "smiling"
          //rect(20, 20, smile * 3, 20); 
 
